@@ -1,22 +1,18 @@
-Live Sequence Protocol (LSP).
-LSP provides features that lie somewhere between UDP and TCP, but it also has features
-not found in either protocol:
-• Unlike UDP or TCP, it supports a client-server communication model.
-• The server maintains connections between a number of clients, each of which is
-identified by a numeric connection identifier.
-• Communication between the server and a client consists of a sequence of discrete
-messages in each direction.
-• Message sizes are limited to fit within single UDP packets (around 1,000 bytes).
-• Messages are sent reliably: a message sent over the network must be received exactly
-once, and messages must be received in the same order they were sent.
-• Message integrity is ensured: a message sent over the network will be rejected if
-modified in transit.
-• The server and clients monitor the status of their connections and detect when the
-other side has become disconnected.
+# Live Sequence Protocol (LSP)
 
-This project is designed for and tested on AFS cluster machines, though you may choose to
-write and build your code locally as well.
+LSP provides features that lie somewhere between UDP and TCP, but it also has features not found in either protocol:
 
+* Unlike UDP or TCP, it supports a client-server communication model.
+* The server maintains connections between a number of clients, each of which is identified by a numeric connection identifier.
+* Communication between the server and a client consists of a sequence of discrete messages in each direction.
+* Message sizes are limited to fit within single UDP packets (around 1,000 bytes).
+* Messages are sent reliably: a message sent over the network must be received exactly once, and messages must be received in the same order they were sent.
+* Message integrity is ensured: a message sent over the network will be rejected if modified in transit.
+* The server and clients monitor the status of their connections and detect when the other side has become disconnected.
+
+This project is designed for and tested on AFS cluster machines, though you may choose to write and build your code locally as well.
+
+***
 
 ### Running the tests
 
@@ -92,3 +88,4 @@ godoc -http=:6060
 ```
 
 3. While the server is running, navigate to [localhost:6060/pkg/github.com/cmu440](http://localhost:6060/pkg/github.com/cmu440) in a browser.
+
